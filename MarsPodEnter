@@ -1,0 +1,9 @@
+if game.PlaceId == 5602055394 then
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Sinxa/Mars/main/MarsPod"), true))()
+else
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+	    Title = "Un-supported game",
+	    Text = "The game you joined is un-supported",
+	    Duration = 3,
+    })
+end
