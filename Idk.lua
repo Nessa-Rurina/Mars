@@ -1,4 +1,4 @@
-local whitelisted = {
+local table2 = {
   13721722342,
   1472415427
  }
