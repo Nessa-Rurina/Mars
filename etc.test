@@ -1,0 +1,251 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local CoreGuiServices2 = Instance.new("ScreenGui")
+local SiderBar = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Idk = Instance.new("Frame")
+local Check = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local Getkey = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local TextBox = Instance.new("TextBox")
+local UICorner_3 = Instance.new("UICorner")
+local TextLabel_2 = Instance.new("TextLabel")
+
+--Properties:
+
+CoreGuiServices2.Name = "CoreGuiServices2"
+CoreGuiServices2.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+CoreGuiServices2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+SiderBar.Name = "SiderBar"
+SiderBar.Parent = CoreGuiServices2
+SiderBar.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
+SiderBar.BorderSizePixel = 0
+SiderBar.Position = UDim2.new(0.480000049, 0, 0.439809293, 0)
+SiderBar.Size = UDim2.new(0, 0, 0, 100)
+
+TextLabel.Parent = SiderBar
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.24242425, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 16, 0, 100)
+TextLabel.Font = Enum.Font.GothamBlack
+TextLabel.Text = "TOYOTA"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 13.000
+TextLabel.TextTransparency = 1.000
+TextLabel.TextWrapped = true
+
+Idk.Name = "Idk"
+Idk.Parent = CoreGuiServices2
+Idk.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Idk.BorderSizePixel = 0
+Idk.Position = UDim2.new(0.50000006, 0, 0.439809293, 0)
+Idk.Size = UDim2.new(0, 0, 0, 100)
+
+Check.Name = "Check"
+Check.Parent = Idk
+Check.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+Check.BackgroundTransparency = 1.000
+Check.BorderSizePixel = 0
+Check.Position = UDim2.new(0.0816326514, 0, 0.719999969, 0)
+Check.Size = UDim2.new(0, 38, 0, 21)
+Check.Font = Enum.Font.GothamBlack
+Check.Text = "Check key"
+Check.TextColor3 = Color3.fromRGB(255, 255, 255)
+Check.TextSize = 6.000
+Check.TextTransparency = 1.000
+Check.TextWrapped = true
+
+UICorner.Parent = Check
+
+Getkey.Name = "Get key"
+Getkey.Parent = Idk
+Getkey.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+Getkey.BackgroundTransparency = 1.000
+Getkey.BorderSizePixel = 0
+Getkey.Position = UDim2.new(0.53061223, 0, 0.719999969, 0)
+Getkey.Size = UDim2.new(0, 38, 0, 21)
+Getkey.Font = Enum.Font.GothamBlack
+Getkey.Text = "Get key"
+Getkey.TextColor3 = Color3.fromRGB(255, 255, 255)
+Getkey.TextSize = 6.000
+Getkey.TextTransparency = 1.000
+Getkey.TextWrapped = true
+
+UICorner_2.Parent = Getkey
+
+TextBox.Parent = Idk
+TextBox.BackgroundColor3 = Color3.fromRGB(54, 54, 54)
+TextBox.BackgroundTransparency = 1.000
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.0816326514, 0, 0.280000001, 0)
+TextBox.Size = UDim2.new(0, 82, 0, 31)
+TextBox.Font = Enum.Font.GothamBlack
+TextBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.PlaceholderText = "Put key here"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 9.000
+TextBox.TextTransparency = 1.000
+TextBox.TextWrapped = true
+
+UICorner_3.Parent = TextBox
+
+TextLabel_2.Parent = Idk
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.122448981, 0, 0.0658224523, 0)
+TextLabel_2.Size = UDim2.new(0, 73, 0, 13)
+TextLabel_2.Font = Enum.Font.GothamBlack
+TextLabel_2.Text = "KEY SYSTEM"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 9.000
+TextLabel_2.TextTransparency = 1.000
+
+-- Scripts:
+
+local function FGVTW_fake_script() -- Check.LocalScript 
+	local script = Instance.new('LocalScript', Check)
+   
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Text = "Checking key..."
+		wait(3)
+		if script.Parent.Parent.TextBox.Text == 'KeyTest' then
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/Nessa-Rurina/HoopsAimBot/main/test.luau'))()
+            wait(0.05)
+            script.Parent.Parent.Parent:Destroy()
+        else
+			script.Parent.Text = "Key incorrect"
+		end
+	end)
+end
+coroutine.wrap(FGVTW_fake_script)()
+local function IAONNJ_fake_script() -- Getkey.LocalScript 
+	local script = Instance.new('LocalScript', Getkey)
+
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		local json = {
+			["cmd"] = "INVITE_BROWSER",
+			["args"] = {
+				["code"] = "pW8Mmu97aw"
+			},
+			["nonce"] = 'a'
+		}
+		spawn(function()
+			print(syn.request({
+				Url = 'http://127.0.0.1:6463/rpc?v=1',
+				Method = 'POST',
+				Headers = {
+					['Content-Type'] = 'application/json',
+					['Origin'] = 'https://discord.com'
+				},
+				Body = game:GetService('HttpService'):JSONEncode(json),
+			}).Body)
+		end)
+		-- discord invite workspace folder save
+		if syn then
+			if isfolder("sinsploit") then
+			else
+				makefolder("sinsploit")
+			end
+		end
+	
+		if syn then
+			if isfile('sinsploit/discord invite.lua') then
+			else
+				_G.invite = [[
+	    local json = {
+	    ["cmd"] = "INVITE_BROWSER",
+	    ["args"] = {
+	    ["code"] = "pW8Mmu97aw"
+	    },
+	    ["nonce"] = 'a'
+	    }
+	    spawn(function()
+	    print(syn.request({
+	    Url = 'http://127.0.0.1:6463/rpc?v=1',
+	    Method = 'POST',
+	    Headers = {
+	    ['Content-Type'] = 'application/json',
+	    ['Origin'] = 'https://discord.com'
+	    },
+	    Body = game:GetService('HttpService'):JSONEncode(json),
+	    }).Body)
+	    end)
+	    setclipboard("https://discord.com/invite/pW8Mmu97aw")
+	       ]]
+				writefile("sinsploit/discord invite.lua", (_G.invite))
+			end
+		end
+		rconsoleclear('h')
+	end)
+end
+coroutine.wrap(IAONNJ_fake_script)()
+local function ZNMEEH_fake_script() -- CoreGuiServices2.Load 
+	local script = Instance.new('LocalScript', CoreGuiServices2)
+
+	local main = script.Parent.Idk
+	local side = script.Parent.SiderBar
+	side.Transparency = 0
+	main.Transparency = 0
+	wait(.01)
+	game:GetService("TweenService"):Create(main, TweenInfo.new(0.45, Enum.EasingStyle.Quart, Enum.EasingDirection.In), {Size = UDim2.new(0, 98,0, 100)}):Play()
+	wait(0.46)
+	game:GetService("TweenService"):Create(side, TweenInfo.new(0.45, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = UDim2.new(0, 33,0, 100)}):Play()
+	wait(0.2)
+	local check = main.Check
+	local get = main["Get key"]
+	local text = main.TextBox
+	local label = main.TextLabel
+	--
+	local title = side.TextLabel
+	
+	check.Transparency = .8
+	get.Transparency = .8
+	text.Transparency = .8
+	label.Transparency = .8
+	title.Transparency = .8
+	title.BackgroundTransparency = 1
+	label.BackgroundTransparency = 1
+	wait(0.05)
+	check.Transparency = .6
+	get.Transparency = .6
+	text.Transparency = .6
+	label.Transparency = .6
+	title.Transparency = .6
+	title.BackgroundTransparency = 1
+	label.BackgroundTransparency = 1
+	wait(0.05)
+	check.Transparency = .4
+	get.Transparency = .4
+	text.Transparency = .4
+	label.Transparency = .4
+	title.Transparency = .4
+	title.BackgroundTransparency = 1
+	label.BackgroundTransparency = 1
+	wait(0.05)
+	check.Transparency = .2
+	get.Transparency = .2
+	text.Transparency = .2
+	label.Transparency = .2
+	title.Transparency = .2
+	title.BackgroundTransparency = 1
+	label.BackgroundTransparency = 1
+	wait(0.05)
+	check.Transparency = 0
+	get.Transparency = 0
+	text.Transparency = 0
+	label.Transparency = 0
+	title.Transparency = 0
+	title.BackgroundTransparency = 1
+	label.BackgroundTransparency = 1
+end
+coroutine.wrap(ZNMEEH_fake_script)()
