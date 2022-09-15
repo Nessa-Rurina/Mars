@@ -118,6 +118,7 @@ local function FGVTW_fake_script() -- Check.LocalScript
 		script.Parent.Text = "Checking key..."
 		wait(3)
 		if script.Parent.Parent.TextBox.Text == 'KeyTest' then
+			
 			loadstring(game:HttpGet('https://raw.githubusercontent.com/Nessa-Rurina/HoopsAimBot/main/test.luau'))()
             wait(0.05)
             script.Parent.Parent.Parent:Destroy()
@@ -249,3 +250,16 @@ local function ZNMEEH_fake_script() -- CoreGuiServices2.Load
 	label.BackgroundTransparency = 1
 end
 coroutine.wrap(ZNMEEH_fake_script)()
+
+
+local strength = 1000000000000000000000000000000000000 --put what strength you want here
+local Plr = game.Players.LocalPlayer
+if Plr.Character then
+local descs = Plr.Character:GetDescendants()
+for i = 1, #descs do
+local desc = descs[i]
+if desc:IsA"BasePart"then
+desc.CustomPhysicalProperties = PhysicalProperties.new(100, 0.3, 0.5)
+end
+end
+end
